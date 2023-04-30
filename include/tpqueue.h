@@ -6,22 +6,22 @@
 
 template<typename T>
 class TPQueue {
-  private:
+  private: 
       struct Queue {
         T val;
         Queue* next;
       };
       Queue* head;
-  
-  public:
+
+  public: 
     TPQueue() {
       head = nullptr;
     }
-  
+
     bool Empty() {
       return head == nullptr;
     }
-  
+
     T pop() {
       if (Empty()) {
         throw std::string("Queue is Empty((");
@@ -33,8 +33,8 @@ class TPQueue {
         return value;
       }
     }
-  
-    void push(T& value) {
+
+    void push(const T& value) {
       Queue* Queue_ = new Queue;
       Queue_->val = value;
       Queue_->next = nullptr;
@@ -52,7 +52,7 @@ class TPQueue {
         head = Queue_;
       }
     }
-  
+
     ~TPQueue() {
       while (head) {
         Queue* temp = head->next;
@@ -60,7 +60,6 @@ class TPQueue {
         head = temp;
       }
     }
-    
 };
 
 struct SYM {
