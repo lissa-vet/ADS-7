@@ -6,14 +6,14 @@
 
 template<typename T>
 class TPQueue {
-  private: 
+   private:
       struct Queue {
         T val;
         Queue* next;
       };
       Queue* head;
 
-  public: 
+   public:
     TPQueue() {
       head = nullptr;
     }
